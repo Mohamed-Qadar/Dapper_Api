@@ -1,0 +1,43 @@
+﻿@model List<ResultLast5ProductWithCategoryDto>
+@{
+    int count = 0;
+}
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-light text-center rounded p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h6 class="mb-0">Son 5 Kiralik Ilani</h6>
+            <a href="/Product/Index">Tum Ilanlara Git</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table text-start align-middle table-bordered table-hover mb-0">
+                <thead>
+                    <tr class="text-dark">
+                        <th scope="col">#</th>
+                        <th scope="col">Tarih</th>
+                        <th scope="col">Başlik</th>
+                        <th scope="col">Şehir</th>
+                        <th scope="col">Kategori</th>
+                        <th scope="col">Fiyat</th>
+                        <th scope="col">Ilani göre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var item in Model)
+                    {
+
+                        count++;
+                        <tr>
+                        <td>@count</td>
+                        <td>@(((DateTime)item.AdvertismentDate).ToString("dd-MMM-yyyy"))</td>
+                        <td>@item.Title</td>
+                        <td>@item.City-@item.District</td>
+                        <td>@item.CategoryName</td>
+                            <td>@item.Price ₺</td>
+                            <td><a class="btn btn-sm btn-primary" href="/Default/Index/">İlani Göre</a></td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

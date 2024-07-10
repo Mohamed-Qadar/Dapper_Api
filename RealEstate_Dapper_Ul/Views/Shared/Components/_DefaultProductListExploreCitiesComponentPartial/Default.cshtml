@@ -1,0 +1,31 @@
+﻿@model List<ResultPopularLocationDto>
+<section class="locations-1 popular" id="locations">
+    <div class="locations py-5">
+        <div class="container py-lg-5 py-md-4">
+            <div class="heading text-center mx-auto">
+                <h6 class="title-small">Sehirler kesfet</h6>
+                <h3 class="title-big">Popular lokasyonlar</h3>
+            </div>
+
+            <div class="row pt-5 ">
+            @foreach(var item in Model)
+            {
+                
+
+                <div class="col-lg-3 col-md-4 col-6 mb-3">
+                    <a href="#url">
+                        <div class="box16">
+                            <img class="img-fluid"style="height:180px;width:400px;" src="@item.ImageUrl" alt="">
+                            <div class="box-content">
+                                <h3 class="title mb-1">@item.CityName</h3>
+                                <span class="post">0 ilan</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                }
+            </div>
+            
+        </div>
+    </div>
+</section>
